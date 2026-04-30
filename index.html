@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCH | Shaping our Community's Happiness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-btn.active {
+            background-color: #0ea5e9;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9, #6366f1, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .media-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .media-card:hover {
+            transform: scale(1.02);
+            border-color: #0ea5e9;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .relief-card {
+            background: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .legacy-tag {
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 w-full z-50 glass-nav border-b border-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <!-- Brand Logo SVG -->
+                    <svg viewBox="0 0 100 100" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 58C25 45 35 35 48 35C61 35 63 65 76 65C89 65 92 55 92 55" stroke="#0ea5e9" stroke-width="8" stroke-linecap="round" fill="none"/>
+                        <circle cx="48" cy="22" r="9" fill="#0ea5e9"/>
+                        <circle cx="76" cy="50" r="9" fill="#0ea5e9"/>
+                    </svg>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl font-black tracking-tighter gradient-text leading-none uppercase">SOCH</span>
+                            <span class="legacy-tag">Formerly DssColony</span>
+                        </div>
+                        <span class="text-[9px] uppercase tracking-[0.2em] font-black text-slate-400 mt-0.5">Shaping Happiness</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="tel:+918918843345" class="text-xs font-bold text-slate-500 hover:text-sky-600 transition">
+                        <i class="fas fa-phone mr-2"></i>+91 89188 43345
+                    </a>
+                    <span class="text-xs font-bold text-slate-400 italic">"Where community empowerment meets economic growth!"</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-20">
+        <!-- Tab Navigation Bar -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div class="flex overflow-x-auto no-scrollbar gap-2 p-1 bg-white rounded-2xl shadow-sm border border-slate-100">
+                <button onclick="switchTab('overview')" class="tab-btn active whitespace-nowrap px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300" id="btn-overview">
+                    <i class="fas fa-home mr-2"></i>Overview
+                </button>
+                <button onclick="switchTab('ecosystem')" class="tab-btn whitespace-nowrap px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300 text-slate-500 hover:text-sky-600" id="btn-ecosystem">
+                    <i class="fas fa-network-wired mr-2"></i>The Ecosystem
+                </button>
+                <button onclick="switchTab('media')" class="tab-btn whitespace-nowrap px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300 text-slate-500 hover:text-sky-600" id="btn-media">
+                    <i class="fab fa-youtube mr-2"></i>Media Portal
+                </button>
+                <button onclick="switchTab('legacy')" class="tab-btn whitespace-nowrap px-6 py-3 rounded-xl font-bold text-sm transition-all
+
